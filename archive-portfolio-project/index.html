@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARCHIVE © 2026</title>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="./css/archive.css" />
+  </head>
+  <body class="selection:bg-[#2D4739] selection:text-white">
+    <!-- Accessibility + UI Helpers -->
+    <a href="#catalogue" class="skip-link">Aller au contenu</a>
+    <div id="scrollProgress" aria-hidden="true"></div>
+    <div id="cursor" aria-hidden="true">View</div>
+
+    <!-- Header -->
+    <header>
+      <!-- Navigation -->
+      <nav
+        class="flex justify-between items-center p-6 border-b-2 border-black sticky top-0 bg-[#E8E2D6]/90 backdrop-blur-sm z-50"
+        aria-label="Navigation principale"
+      >
+        <a href="#" class="text-2xl font-black tracking-tighter uppercase">Archive™</a>
+        <div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] items-center">
+          <a href="#catalogue" class="hover:italic">Catalogue</a>
+          <a href="#branding" class="hover:italic">Our Story</a>
+          <a href="#socials" class="hover:italic">Socials</a>
+          <a href="#index" class="hover:italic">Index</a>
+          <button
+            id="cartButton"
+            class="border-2 border-black px-4 py-1 hover:bg-black hover:text-white transition"
+            type="button"
+            aria-label="Voir le panier"
+          >
+            Cart (0)
+          </button>
+        </div>
+      </nav>
+
+      <!-- Hero -->
+      <section class="py-32 px-6 flex flex-col items-center text-center">
+        <span class="text-xs font-bold uppercase tracking-[0.5em] mb-4">EST. 2026</span>
+        <h1 class="text-[10vw] font-serif-italic leading-none">Objets de Mémoire</h1>
+        <p class="max-w-xl mt-8 text-lg opacity-80 leading-relaxed italic">
+          Une sélection rigoureuse d'artefacts modernes, documentés et conservés pour leur
+          intégrité fonctionnelle.
+        </p>
+      </section>
+
+      <!-- Trust Signals -->
+      <section class="trust-strip" aria-label="Garanties de la marque">
+        <p>Authentification de provenance</p>
+        <p>Réparation & entretien à vie</p>
+        <p>Livraison neutre en carbone</p>
+      </section>
+    </header>
+
+    <!-- Product Catalogue -->
+    <main id="catalogue" class="bento-grid" aria-label="Catalogue des reliques">
+      <!-- Featured Product -->
+      <article class="bento-item col-span-12 md:col-span-7 h-[700px] flex flex-col justify-end group">
+        <div class="tape"></div>
+        <img
+          src="https://images.unsplash.com/photo-1495707902641-75cac588d2e9?q=80&w=2070"
+          alt="Appareil photo analogique en gros plan"
+          class="archive-img absolute inset-0 w-full h-full object-cover"
+        />
+        <div
+          class="relative z-10 bg-white/80 p-8 backdrop-blur-md border-t-2 border-black translate-y-full group-hover:translate-y-0 transition-transform duration-500"
+        >
+          <span class="text-xs font-bold">RELIQUE 001</span>
+          <h2 class="text-4xl font-serif-italic">Optique Analogique</h2>
+          <div class="flex justify-between items-end mt-4 gap-4">
+            <p class="text-xs uppercase max-w-xs">
+              Boîtier en magnésium, lentilles traitées au lanthane. Édition limitée.
+            </p>
+            <button
+              class="bg-black text-white px-6 py-3 font-bold uppercase text-[10px]"
+              data-name="Optique Analogique"
+              data-price="1250"
+              type="button"
+            >
+              Acquérir 1250€
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Secondary Product -->
+      <article class="bento-item col-span-12 md:col-span-5 h-[700px] border-l-2 border-black flex flex-col">
+        <div class="h-1/2 overflow-hidden relative">
+          <img
+            src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1974"
+            alt="Chaise en bois minimaliste"
+            class="archive-img w-full h-full object-cover"
+          />
+        </div>
+        <div class="h-1/2 pt-8 flex flex-col justify-between">
+          <div>
+            <h3 class="text-3xl font-serif-italic">Mobilier 04</h3>
+            <p class="mt-4 opacity-70">
+              Structure en frêne massif, assemblage traditionnel sans vis. Conçu pour durer trois
+              générations.
+            </p>
+          </div>
+          <button
+            class="w-full border-2 border-black py-4 font-bold uppercase text-xs hover:bg-black hover:text-white transition"
+            data-name="Mobilier 04"
+            data-price="890"
+            type="button"
+          >
+            Commander 890€
+          </button>
+        </div>
+      </article>
+
+      <!-- Quote Block -->
+      <section class="bento-item col-span-12 md:col-span-4 bg-[#2D4739] text-[#E8E2D6] flex items-center justify-center">
+        <p class="text-5xl font-serif-italic text-center p-4">"Le beau est ce qui est nécessaire."</p>
+      </section>
+
+      <!-- Product Card -->
+      <article class="bento-item col-span-12 md:col-span-4 group border-l-2 border-black">
+        <img
+          src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?q=80&w=1974"
+          alt="Chaussure en cuir artisanale"
+          class="archive-img h-64 w-full object-cover mb-6"
+        />
+        <div class="flex justify-between items-center mb-5">
+          <span class="font-bold text-xs uppercase tracking-widest">Relique 003 / Chaussure</span>
+          <span class="font-serif-italic text-xl">220€</span>
+        </div>
+        <button
+          class="w-full border-2 border-black py-3 font-bold uppercase text-xs hover:bg-black hover:text-white transition"
+          data-name="Relique 003 / Chaussure"
+          data-price="220"
+          type="button"
+        >
+          Ajouter au panier
+        </button>
+      </article>
+
+      <!-- Product Card -->
+      <article class="bento-item col-span-12 md:col-span-4 group border-l-2 border-black">
+        <img
+          src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=1999"
+          alt="Montre mécanique vintage"
+          class="archive-img h-64 w-full object-cover mb-6"
+        />
+        <div class="flex justify-between items-center mb-5">
+          <span class="font-bold text-xs uppercase tracking-widest">Relique 004 / Montre</span>
+          <span class="font-serif-italic text-xl">540€</span>
+        </div>
+        <button
+          class="w-full border-2 border-black py-3 font-bold uppercase text-xs hover:bg-black hover:text-white transition"
+          data-name="Relique 004 / Montre"
+          data-price="540"
+          type="button"
+        >
+          Ajouter au panier
+        </button>
+      </article>
+    </main>
+
+    <!-- Branding: Story + Ethical Sourcing -->
+    <section id="branding" class="branding-section border-y-2 border-black">
+      <div class="branding-head">
+        <span class="text-xs font-bold uppercase tracking-[0.4em]">Branding Dossier</span>
+        <h2 class="font-serif-italic text-5xl mt-4">Our Story & Ethical Sourcing</h2>
+      </div>
+
+      <div class="branding-grid">
+        <article class="branding-block">
+          <p class="branding-label">Our Story</p>
+          <p class="branding-text">
+            ARCHIVE est née en 2026 comme studio de sélection d'objets durables. Chaque pièce est
+            choisie pour sa justesse d'usage, sa capacité à traverser le temps et sa valeur
+            émotionnelle.
+          </p>
+        </article>
+
+        <article class="branding-block accent">
+          <p class="branding-label">Ethical Sourcing</p>
+          <p class="branding-text">
+            Nous privilégions des ateliers à taille humaine, des matériaux traçables et des
+            circuits courts. Chaque produit est accompagné d'une fiche d'origine, de conditions de
+            fabrication et de réparabilité.
+          </p>
+        </article>
+
+        <article class="branding-block">
+          <p class="branding-label">Core Values</p>
+          <ul class="branding-values">
+            <li>Transparence radicale sur la provenance</li>
+            <li>Longévité, maintenance et seconde vie</li>
+            <li>Respect des savoir-faire locaux</li>
+            <li>Production responsable et limitée</li>
+          </ul>
+        </article>
+
+        <article class="branding-block">
+          <p class="branding-label">Design Language</p>
+          <p class="branding-text">
+            Une identité éditoriale: textures papier, contrastes encre, photographie à grain et
+            typographie expressive. Un univers visuel qui raconte la mémoire et la précision.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Social + Newsletter -->
+    <section id="socials" class="socials-section border-b-2 border-black" aria-label="Réseaux sociaux">
+      <div class="socials-wrap">
+        <div>
+          <p class="branding-label">Follow Archive</p>
+          <h3 class="font-serif-italic text-4xl">Réseaux & Journal</h3>
+          <p class="socials-copy">
+            Coulisses des ateliers, nouvelles acquisitions et éditions limitées publiées chaque
+            semaine.
+          </p>
+          <form id="newsletterForm" class="newsletter-form" novalidate>
+            <label for="newsletterEmail" class="branding-label">Newsletter</label>
+            <div class="newsletter-row">
+              <input
+                id="newsletterEmail"
+                name="email"
+                type="email"
+                placeholder="Votre email"
+                autocomplete="email"
+                required
+              />
+              <button type="submit">S'inscrire</button>
+            </div>
+          </form>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram Archive">Instagram</a>
+          <a href="#" aria-label="Pinterest Archive">Pinterest</a>
+          <a href="#" aria-label="LinkedIn Archive">LinkedIn</a>
+          <a href="#" aria-label="Behance Archive">Behance</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="index" class="p-20 border-t-2 border-black text-center">
+      <div class="text-[15vw] font-black uppercase tracking-tighter opacity-5">ARCHIVE</div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-[-5vw] relative z-10 text-xs font-bold uppercase tracking-widest">
+        <div><p>© 2026 ARCHIVE INC.</p></div>
+        <div><p>BERLIN — TOKYO — PARIS</p></div>
+        <div><p>ALL RIGHTS RESERVED.</p></div>
+      </div>
+    </footer>
+
+    <!-- Checkout Modal -->
+    <aside
+      id="checkout"
+      class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100] hidden items-center justify-center p-4"
+      aria-hidden="true"
+      aria-labelledby="checkoutTitle"
+      role="dialog"
+    >
+      <div class="bg-[#E8E2D6] border-2 border-black p-10 max-w-lg w-full relative">
+        <button
+          id="closeCheckout"
+          class="absolute top-4 right-4 text-xs font-bold uppercase underline"
+          type="button"
+        >
+          Fermer
+        </button>
+        <h2 id="checkoutTitle" class="text-4xl font-serif-italic mb-8">Acquisition</h2>
+        <div class="space-y-6">
+          <div class="border-b border-black pb-2 flex justify-between">
+            <span id="itemName" class="uppercase text-xs font-bold">-</span>
+            <span id="itemPrice" class="font-serif-italic text-lg">-</span>
+          </div>
+          <input
+            type="text"
+            placeholder="Titulaire de la carte"
+            class="w-full bg-transparent border-b border-black py-2 outline-none uppercase text-xs"
+          />
+          <input
+            type="text"
+            placeholder="Numéro de carte"
+            class="w-full bg-transparent border-b border-black py-2 outline-none uppercase text-xs"
+          />
+          <button
+            class="w-full bg-[#2D4739] text-white py-4 font-bold uppercase text-xs mt-4 hover:opacity-90 transition"
+            type="button"
+          >
+            Confirmer la transaction
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Global Feedback Toast -->
+    <div id="cartToast" class="cart-toast" role="status" aria-live="polite">Ajouté au panier</div>
+
+    <!-- Project Scripts -->
+    <script src="./js/archive.js"></script>
+  </body>
+</html>

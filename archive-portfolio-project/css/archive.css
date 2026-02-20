@@ -1,0 +1,379 @@
+/* =======================
+   Theme Tokens
+======================= */
+:root {
+  --paper: #e8e2d6;
+  --ink: #1a1a1a;
+  --accent: #2d4739;
+}
+
+/* =======================
+   Base
+======================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+  background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+}
+
+/* =======================
+   Accessibility Helpers
+======================= */
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -40px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.5rem 0.75rem;
+  z-index: 200;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+#scrollProgress {
+  position: fixed;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  background: var(--accent);
+  z-index: 120;
+}
+
+/* =======================
+   Typography Utilities
+======================= */
+.font-serif-italic {
+  font-family: "DM Serif Display", serif;
+  font-style: italic;
+}
+
+/* =======================
+   Catalogue Layout
+======================= */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2px;
+  background-color: var(--ink);
+  border: 2px solid var(--ink);
+}
+
+.bento-item {
+  background-color: var(--paper);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+}
+
+/* =======================
+   Catalogue Details
+======================= */
+.tape {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 100px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px);
+  z-index: 10;
+}
+
+.archive-img {
+  filter: sepia(20%) contrast(1.1) grayscale(0.5);
+  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.bento-item:hover .archive-img {
+  filter: sepia(0%) contrast(1) grayscale(0);
+  transform: scale(1.05);
+}
+
+/* =======================
+   Cursor + Body States
+======================= */
+#cursor {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+body.checkout-open {
+  overflow: hidden;
+}
+
+/* =======================
+   Trust Strip
+======================= */
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+  background: var(--ink);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+.trust-strip p {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  background: var(--paper);
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* =======================
+   Branding Section
+======================= */
+.branding-section {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(180deg, rgba(232, 226, 214, 0.92) 0%, rgba(232, 226, 214, 1) 100%);
+}
+
+.branding-head {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.branding-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+  background-color: var(--ink);
+  border: 2px solid var(--ink);
+}
+
+.branding-block {
+  background-color: var(--paper);
+  padding: 2rem;
+}
+
+.branding-block.accent {
+  background-color: var(--accent);
+  color: var(--paper);
+}
+
+.branding-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.branding-text {
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.branding-values {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.9;
+}
+
+/* =======================
+   Social Section
+======================= */
+.socials-section {
+  padding: 4rem 1.5rem;
+  background-color: #e2dbcf;
+}
+
+.socials-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.socials-copy {
+  margin-top: 1rem;
+  max-width: 42ch;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+.social-links {
+  display: grid;
+  gap: 0.75rem;
+}
+
+/* =======================
+   Newsletter Component
+======================= */
+.newsletter-form {
+  margin-top: 1.5rem;
+}
+
+.newsletter-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.newsletter-row input {
+  min-width: 0;
+  border: 2px solid var(--ink);
+  background: transparent;
+  padding: 0.75rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.newsletter-row button {
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.75rem 1rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  transition: opacity 0.2s ease;
+}
+
+.newsletter-row button:hover,
+.newsletter-row button:focus-visible {
+  opacity: 0.9;
+}
+
+/* =======================
+   Social Links
+======================= */
+.social-links a {
+  border: 2px solid var(--ink);
+  padding: 0.95rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateX(5px);
+}
+
+/* =======================
+   Feedback Toast
+======================= */
+.cart-toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--paper);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.62rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  z-index: 140;
+}
+
+.cart-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =======================
+   Focus States
+======================= */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 1023px) {
+  .bento-item {
+    padding: 1.5rem;
+  }
+
+  .trust-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .branding-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .branding-block {
+    padding: 1.5rem;
+  }
+
+  .socials-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =======================
+   Touch Devices
+======================= */
+@media (hover: none), (pointer: coarse) {
+  #cursor {
+    display: none;
+  }
+}
+
+/* =======================
+   Reduced Motion
+======================= */
+@media (prefers-reduced-motion: reduce) {
+  .archive-img,
+  .bento-item,
+  #cursor,
+  .social-links a,
+  .cart-toast {
+    transition: none;
+  }
+}
